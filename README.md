@@ -1,7 +1,7 @@
 # soen-342 section II
 <br>
 Members: <br>
-1- __Altamash Sheikh__ 40212568 - altasheikh01@gmail.com <br>
-2- __Muiz Madadi__ <br>
-3- __Shamma__ <br>
+1- Altamash Sheikh 40212568 - altasheikh01@gmail.com <br>
+2- Muiz Madadi <br>
+3- Shamma <br>
 
