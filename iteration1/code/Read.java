@@ -5,7 +5,7 @@ public class Read extends Registry{
 	ArrayList<Read_item> Read;
 	
 	public Read() {
-		new ArrayList<Read_item>();
+		Read = new ArrayList<Read_item>();
 	}
 	
 	public void CreateRead_item(Sensor sensor, Temperature temp) {
