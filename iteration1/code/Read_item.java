@@ -24,4 +24,9 @@ public class Read_item {
 		this.temp = temp;
 	}
 
+	@Override
+    public String toString() {
+        return sensor.toString() + ", " + temp.toString();
+    }
+
 }
