@@ -1,5 +1,5 @@
 
-public class Temperature extends Temperature_list {
+public class Temperature{
     private double temp;
 
     public Temperature(Double temp) {

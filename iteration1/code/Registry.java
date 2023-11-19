@@ -24,9 +24,13 @@ public class Registry {
 		ReadTemperature(l1,map,read);
 		
 		System.out.println(ReadTemperature(l1,map,read));
-
-		
-		
+		int keepTrack = 0;
+		for (int i = 0 ; i < sList.sensors.size(); i++){
+			if (sList.sensors.get(i).getDeployed() == true){
+				map.CreateMap_item(sList.sensors.get(i), lList.locations.get(keepTrack));
+				keepTrack++;
+			}
+		}
 	}
 	
 	

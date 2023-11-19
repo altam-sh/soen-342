@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Sensor_list extends Registry{
+public class Sensor_list{
 
 	ArrayList<Sensor> sensors;
 	

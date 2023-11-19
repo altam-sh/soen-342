@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Read extends Registry{
+public class Read{
 	
 	ArrayList<Read_item> Read;
 	

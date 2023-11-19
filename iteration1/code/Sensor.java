@@ -1,5 +1,5 @@
 
-public class Sensor extends Sensor_list {
+public class Sensor{
 	
 	private String sensorID;
 	private Boolean deployed;

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Location_list extends Registry{
+public class Location_list{
 	
 	ArrayList<Location> locations;
 	Location L1 = new Location("montreal");
