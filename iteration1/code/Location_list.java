@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Location_list extends Registry{
 	
 	ArrayList<Location> locations;
-	
 	Location L1 = new Location("montreal");
     Location L2 = new Location("quebec");
     Location L3 = new Location("toronto");
