@@ -5,14 +5,14 @@ public class Map extends Registry{
 
 
     Map(){
-        this.map = new ArrayList<Map_item>;
+        this.map = new ArrayList<Map_item>();
         //add default maps in the registry since registry can only see both sensor and map
     }
     public void CreateMap_item(Sensor sensor, Location location) {
 
-        Map.add(new Map_item(sensor, location));
+        map.add(new Map_item(sensor, location));
     }
     public ArrayList<Map_item> getMap(){
-        return Map;
+        return map;
     }
 }

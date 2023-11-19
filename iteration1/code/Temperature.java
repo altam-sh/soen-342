@@ -1,6 +1,6 @@
 
-public class Temperature extends Temperature_List {
-    private Double temp;
+public class Temperature extends Temperature_list {
+    private double temp;
 
     public Temperature(Double temp) {
         this.temp = temp;
@@ -14,10 +14,9 @@ public class Temperature extends Temperature_List {
         this.temp = temp;
     }
 
-    @Override
-    public String toString() {
-        return temp.toString();
-    }
+//    public String toString() {
+//        return temp.toString();
+//    }
 
 
 }

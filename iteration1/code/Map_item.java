@@ -23,9 +23,4 @@ public class Map_item {
     public void setL(Location l) {
         this.l = l;
     }
-
-	@Override
-    public String toString() {
-        return deployed;
-    }
 }
