@@ -14,9 +14,9 @@ public class Temperature{
         this.temp = temp;
     }
 
-//    public String toString() {
-//        return temp.toString();
-//    }
+    public String toString() {
+        return temp+"";
+    }
 
 
 }

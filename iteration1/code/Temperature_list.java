@@ -35,7 +35,6 @@ public class Temperature_list extends Registry {
     public void addTemperature(double temp) {
         temperatures.add(new Temperature(temp));
     }
-
     public ArrayList<Temperature> getList() {
         return temperatures;
     }

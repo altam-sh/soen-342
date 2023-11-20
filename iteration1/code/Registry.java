@@ -15,25 +15,80 @@ public class Registry {
 		Read read = new Read();
 		Message mes = new Message();
 		
-		Sensor s1 = sList.getList().get(2);
+		Sensor s1 = sList.getList().get(0);
 		Location l1 = lList.getList().get(0);
-		Temperature t1 = tList.getList().get(4);
-		
+		Temperature t1 = tList.getList().get(0);
+
+		//deploy a sensor -> should be okay
+		System.out.print("\nDEBUGG: Let's try to deploy a sensor correctly.\n");
 		DeploySensorOk(s1,l1,t1,map,read);
-		
-		ReadTemperature(l1,map,read);
-		
-		System.out.println(ReadTemperature(l1,map,read));
-		int keepTrack = 0;
-		for (int i = 0 ; i < sList.sensors.size(); i++){
-			if (sList.sensors.get(i).getDeployed() == true){
-				map.CreateMap_item(sList.sensors.get(i), lList.locations.get(keepTrack));
-				keepTrack++;
-			}
-		}
+
+		//now testing to deploy the same sensor -> should give error message
+		System.out.print("\nDEBUGG: Let's try to deploy the same sensor again.\n");
+		DeploySensorOk(s1,l1,t1,map,read);
+
+		//try to deploy a sensor to a location already covered -> should be wrong
+		System.out.print("\nDEBUGG: Let's try to deploy a new sensor to a location that has already a sensor.\n");
+		Sensor s2 = sList.getList().get(1);
+		Temperature t2 = tList.getList().get(1);
+		DeploySensorOk(s2,l1,t1,map,read);
+
+		//try to deploy the same sensor to another location
+		System.out.print("\nDEBUGG: Let's try to deploy the same sensor to a different location.\n");
+		Temperature t3 = tList.getList().get(2);
+		Location l2 = lList.getList().get(1);
+		DeploySensorOk(s1,l2,t1,map,read);
+
+		//now to show that all the sensors work we will print all of them
+		System.out.print("\nDEBUGG: Now, let's deploy all the sensors to a location and read the temperature.\n");
+		//sensor 2 already brought
+		//location 2 already brought up
+		//T2 already brought up
+		DeploySensorOk(s2,l2,t2,map,read);
+		System.out.print("Temperature at " + l2 + " is " + ReadTemperature(l2, map, read) + " degrees Celcius\n\n");
+
+		Sensor s3 = sList.getList().get(2);
+		Location l3 = lList.getList().get(2);
+		//temperature T3 already defined above
+		DeploySensorOk(s3,l3,t3,map,read);
+		System.out.print("Temperature at " + l3 + " is " + ReadTemperature(l3, map, read) + " degrees Celcius\n\n");
+
+		Sensor s4 = sList.getList().get(3);
+		Location l4 = lList.getList().get(3);
+		Temperature t4 = tList.getList().get(3);
+		DeploySensorOk(s4,l4,t4,map,read);
+		System.out.print("Temperature at " + l4 + " is " + ReadTemperature(l4, map, read) + " degrees Celcius\n\n");
+
+		Sensor s5 = sList.getList().get(4);
+		Location l5 = lList.getList().get(4);
+		Temperature t5 = tList.getList().get(4);
+		DeploySensorOk(s5,l5,t5,map,read);
+		System.out.print("Temperature at " + l4 + " is " + ReadTemperature(l4, map, read) + " degrees Celcius\n\n");
+
+		Sensor s6 = sList.getList().get(5);
+		Location l6 = lList.getList().get(5);
+		Temperature t6 = tList.getList().get(5);
+		DeploySensorOk(s6,l6,t6,map,read);
+		System.out.print("Temperature at " + l6 + " is " + ReadTemperature(l6, map, read) + " degrees Celcius\n\n");
+
+		Sensor s7 = sList.getList().get(6);
+		Location l7 = lList.getList().get(6);
+		Temperature t7 = tList.getList().get(6);
+		DeploySensorOk(s7,l7,t7,map,read);
+		System.out.print("Temperature at " + l7 + " is " + ReadTemperature(l7, map, read) + " degrees Celcius\n\n");
+
+
+
+
+
+
+
+
+
+		//now for location
+
+
 	}
-	
-	
 	public static void DeploySensorOk(Sensor sensor, Location location, Temperature temp, Map map, Read read) {
 		
 		ArrayList<Map_item> mapList = map.getMap();
@@ -43,10 +98,13 @@ public class Registry {
 		Message mes = new Message();
 		
 		if (deployed == false && loc.equals(mes.location(false))) {
-			sensor.setDeployed(!deployed);
+			sensor.setDeployed(true);
 			mapList.add(new Map_item(sensor, location));
 			readList.add(new Read_item(sensor, temp));
-			
+			System.out.print("Deployed correctly. Deployed sensor " + sensor.getSensorID() + " at " + location.getName() + "\n");
+		}
+		else {
+			System.out.print("Failed to deploy sensor " + sensor.getSensorID() + " at location " + location.getName() + ".\n");
 		}
 		
 		
@@ -73,7 +131,6 @@ public class Registry {
 		return t;
 		
 	}
-	
 	public static String Success(Message mes) {
 		return mes.success();
 	}
@@ -86,7 +143,6 @@ public class Registry {
 		
 		return "";
 	}
-	
 	public static String LocationCovered(Location location, ArrayList<Map_item> map) {
 		Boolean covered = false;
 		Message mes = new Message();

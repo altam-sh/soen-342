@@ -4,17 +4,17 @@ public class Sensor_list{
 
 	ArrayList<Sensor> sensors;
 	
-	Sensor S1 = new Sensor("001", true);
-    Sensor S2 = new Sensor("002", true);
+	Sensor S1 = new Sensor("001", false);
+    Sensor S2 = new Sensor("002", false);
     Sensor S3 = new Sensor("003", false);
-    Sensor S4 = new Sensor("004", true);
-    Sensor S5 = new Sensor("005", true);
+    Sensor S4 = new Sensor("004", false);
+    Sensor S5 = new Sensor("005", false);
     Sensor S6 = new Sensor("006", false);
-    Sensor S7 = new Sensor("008", false);
-    Sensor S8 = new Sensor("009", false);
-    Sensor S9 = new Sensor("010", true);
-    Sensor S10 = new Sensor("011", false);
-    Sensor S11 = new Sensor("012", true);
+    Sensor S7 = new Sensor("007", false);
+    Sensor S8 = new Sensor("008", false);
+    Sensor S9 = new Sensor("09", false);
+    Sensor S10 = new Sensor("012", false);
+    Sensor S11 = new Sensor("011", false);
 
 
 	public Sensor_list() {

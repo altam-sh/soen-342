@@ -15,6 +15,5 @@ public class Read{
 	public ArrayList<Read_item> getRead() {
 		return Read;
 	}
-	
-
 }
+
