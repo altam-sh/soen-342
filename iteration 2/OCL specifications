@@ -5,11 +5,12 @@ inv: self.sensor_list.sensor → forAll(s1, s2: Sensor | s1 <> s2 implies s1.sen
 
 2.  All sensors deployed in the system are sensors that are maintained by the system. (In other words, the system does not deploy a sensor which is not registered.)
 context Registry
-inv: self.sensor_list.sensor → forAll(s: Sensor | sensor.deployed = true implies includesAll(self.map.sensor and self.read.sensor)
+inv: self.sensor_list.sensor → includesAll((self.map.sensor and self.read.sensor) → forAll(s: Sensor | s.deployed = true))
 
 3.Every deployed sensor must be associated with a location that exists in the corresponding location registry
-context Sensor
-inv self.deployed = true implies self.map_item.location 
+context Registry
+inv self.sensor_list.sensor.deployed → forAll(s: Sensor | s.deployed = true) 
+                                     → exists (map_item: Map_item | map_item.location = self.location_list.location)
 
 4. Every location maintained by the system is associated with a unique sensor.
 context: Location
